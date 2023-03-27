@@ -1,1 +1,1 @@
-from . import kalkulatorr
+from . import kalkulator
