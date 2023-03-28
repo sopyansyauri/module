@@ -10,13 +10,25 @@ class Statistika:
         self.jumlah = x
         return sum(self.jumlah) / len(self.jumlah)
     
-    def std(self, x):
-        self.x = x
     
     def variance(self, x):
         self.x = x
-        self.y = [self.mean(self.x)]
-        for i in self.x:
-                float(i)
-                self.hasil = self.x - self.y
-                return self.hasil
+        self.x = [x - self.mean(self.x) for x in self.x]
+        self.x = [x * x for x in self.x]
+        self.x = sum(self.x) / len(self.x)
+        return self.x
+    
+    def standarDeviation(self, x):
+        self.x = x
+        return math.sqrt(self.variance(self.x))
+
+if __name__ == "__main__":
+     import numpy as np
+
+     statistika = Statistika()
+     speed = [86,87,88,86,87,85,86]
+     speed = np.array(speed)
+
+     print(f"Mean: {statistika.mean(speed)}")
+     print(f"Variance: {statistika.variance(speed)}")
+     print(f"Standard Deviation: {statistika.standarDeviation(speed)}")
