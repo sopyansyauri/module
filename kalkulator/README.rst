@@ -9,7 +9,7 @@ Installing
 
 .. code-block:: bash
 
-    pip install kalkulator
+    pip install kalkulator-sederhana==0.6
 
 Usage
 =====
