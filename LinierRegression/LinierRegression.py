@@ -1,4 +1,3 @@
-import numpy as np
 
 class LinierRegression:
     def __init__(self):
@@ -50,15 +49,13 @@ class LinierRegression:
         return (self.sigmaY(self.y) / self.jumlahData(self.X)) - (self.coef() * (self.sigmaX(self.X) / self.jumlahData(self.X)))
 
 import pandas as pd
+import sklearn.linear_model as lm
 
-data = pd.read_csv("bensin.csv")
+if __name__ == "__main__":
+    data = pd.read_csv("bensin.csv")
+    X = data[["Liter"]]
+    y = data[["Kilometer"]]
 
-linier = LinierRegression()
-
-x = data["Liter"]
-y = data["Kilometer"]
-
-x = np.array([1,2,3])
-y = np.array([1,2,3])
-xy = linier.XY(x,y)
-print(xy)
+    model = lm.LinearRegression()
+    model.fit(X, y)
+    print(model.score(X, y))
