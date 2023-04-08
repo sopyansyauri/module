@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+src/kalkulator/__init__.py
+src/kalkulator/kalkulator.py
+src/kalkulator.egg-info/PKG-INFO
+src/kalkulator.egg-info/SOURCES.txt
+src/kalkulator.egg-info/dependency_links.txt
+src/kalkulator.egg-info/requires.txt
+src/kalkulator.egg-info/top_level.txt
