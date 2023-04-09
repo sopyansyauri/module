@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='kalkulator-sederhana',
-    version='0.7',
+    version='0.8',
     license='MIT',
     author="Sopyan Syauri",
     author_email='rifai.sopyan04@gmail.com',
