@@ -23,12 +23,12 @@ class Statistika:
         return math.sqrt(self.variance(self.x))
 
 if __name__ == "__main__":
-     import numpy as np
+    import numpy as np
 
-     statistika = Statistika()
-     speed = [86,87,88,86,87,85,86]
-     speed = np.array(speed)
+    statistika = Statistika()
+    x = [6, 8, 10, 14, 18]
+    speed = np.array(x)
 
-     print(f"Mean: {statistika.mean(speed)}")
-     print(f"Variance: {statistika.variance(speed)}")
-     print(f"Standard Deviation: {statistika.standarDeviation(speed)}")
+    print(f"Mean: {statistika.mean(speed)}")
+    print(f"Variance: {statistika.variance(speed)}")
+    print(f"Standard Deviation: {statistika.standarDeviation(speed)}")

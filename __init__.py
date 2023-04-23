@@ -1,2 +1,2 @@
-from . import kalkulator
 from . import statistika
+from . import LinierRegression
