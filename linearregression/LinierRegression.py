@@ -20,6 +20,7 @@ class LinearRegression:
     def slope(self):
         return np.array(self.covariance() / self.variance(self.X)).reshape(1, len(self.X[0]))
 
+
     def covariance(self):
         return (sum((self.X - np.mean(self.X))*(self.y - np.mean(self.y)))) / (len(self.X) - 1)
 
@@ -28,6 +29,7 @@ class LinearRegression:
 
     def intercept(self):
         return np.array(np.mean(self.y) - self.slope() * self.mean(self.X)).reshape(len(self.X[0]))
+
 
     def predict(self, x):
         hasil = self.intercept() + self.slope() * x

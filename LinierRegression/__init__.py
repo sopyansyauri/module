@@ -1,1 +1,0 @@
-from .LinierRegression import LinierRegression
