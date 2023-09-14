@@ -18,7 +18,7 @@ class LinearRegression:
         return sum(self.jumlah) / len(self.jumlah)
 
     def slope(self):
-        return np.array(self.covariance() / self.variance(self.X)).reshape(1, len(self.X[0]))
+        return np.array(self.covariance() / self.variance(self.X))
 
 
     def covariance(self):
@@ -28,29 +28,30 @@ class LinearRegression:
         return  np.var(x.flatten(), ddof=1)
 
     def intercept(self):
-        return np.array(np.mean(self.y) - self.slope() * self.mean(self.X)).reshape(len(self.X[0]))
+        return np.array(np.mean(self.y) - self.slope() * self.mean(self.X))
 
 
     def predict(self, x):
         hasil = self.intercept() + self.slope() * x
         return np.array(hasil)
 
-    def r_squared(self, ytest, yprediksi):
-        ytest = np.array(ytest)
-        yprediksi = np.array(yprediksi)
-        ss_res = sum((ytest - yprediksi) ** 2)  
-        ss_tot = sum((ytest - self.mean(ytest))**2)
+    def r_squared(self, y_true, y_pred):
+        y_true = np.array(y_true)
+        y_pred = np.array(y_pred)
+        ss_res = sum((y_true - y_pred) ** 2)  
+        ss_tot = sum((y_true - self.mean(y_true))**2)
         hasil = 1 - (ss_res / ss_tot)
         return hasil[0]
 
     
 
-import pandas as pd
-import sklearn.linear_model as lm
-import sklearn.model_selection as ms
-from sklearn.metrics import r2_score
 
 if __name__ == "__main__":
+    import pandas as pd
+    import sklearn.linear_model as lm
+    import sklearn.model_selection as ms
+    from sklearn.metrics import r2_score
+
     data = pd.read_csv("bensin.csv")
     X = data[["Liter"]]
     y = data[["Kilometer"]]
